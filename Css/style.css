@@ -1,0 +1,88 @@
+:root{
+    --pretoDnc: #303030;
+    --font: verdana, Geneva, thahoma, sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: var(--pretoDnc);
+    padding: 2%;
+    color: antiquewhite;
+    font-family: var(--font);
+    display: grid;
+    text-align: center;
+}
+
+header image{
+    width: 100px;
+}
+
+main{
+    padding: 5% 7%;
+    font-family: var(--font);
+}
+
+.card{
+    background-color: aliceblue;
+    border: 1px solid #ccc;
+    padding: 5%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.inputPd{
+    display: grid;
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button{
+    background-color: var(--pretoDnc);
+    color: aliceblue;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #000;
+    transition: all ease 0.3s;
+}
+
+.conteudo{
+    margin-top: 15px;
+}
+
+table{
+    font-family: var(--font);
+
+    width: 100%;
+    border-collapse: collapse;
+    border: #ccc;
+}
+
+table th{
+    background-color: var(--pretoDnc);
+    padding: 1px;
+    color:aliceblue;
+}
+
+table td{
+    padding: 1px;
+}
+
+table td img{
+    width: 25px;
+}
