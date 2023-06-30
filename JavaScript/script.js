@@ -19,8 +19,9 @@ class Produto{
         if(this.validar(produto) == true){
             this.Salvar(produto)
         }
-        //Chama a função listar criada nesta classe
+        //Chama a função listar criada nesta classe para adicionar os itens no grid
         this.Listar()
+        this.Cancelar()
     }
 
     //Criando a função Ler Dados
@@ -84,11 +85,36 @@ class Produto{
             td_id.innerText = this.arrayProdutos[i].id;
             td_nome.innerText = this.arrayProdutos[i].nomeProduto;
             td_preco.innerText = this.arrayProdutos[i].precoProduto;
+            
+            //Criando o eletemddo img para cada linha nova do grid
             let imagem = document.createElement('img');
-
             imagem.src = './Icone/del.png'
+
+            //Definindo a a função do click e agarantindo que use o id do produto selecionado
+            imagem.setAttribute("onclick", "produto.Deletar("+ this.arrayProdutos[i].id +")")
             td_del.appendChild(imagem)
         }
+    }
+
+    Cancelar(){
+        document.getElementById('pdNome').value = ''
+        document.getElementById('pdPreco').value = ''
+    }
+
+    Deletar(id){
+        let tbody = document.getElementById('tbody')
+
+        for(let i = 0; i < this.arrayProdutos.length; i++){
+            
+            if(this.arrayProdutos[i].id == id){
+                //Aqui é utilizado a função *SPLICE* nativa do JavaScript para excluir oitem selecionado
+                this.arrayProdutos.splice(i, 1)
+                //Aqui deleta a linha correnspondente ao id selecionado na lixeira
+                tbody.deleteRow(i)
+            }
+            
+        }
+        alert(`O item ${id} foi deletetado com sucesso!`)
     }
 }
 
@@ -97,6 +123,5 @@ class Produto{
     + A variável produto criada a segui é um objeto da CLASSE
     + O objeto aciona a função adicionar e o o bjeto aciona a 
       CLASSE, e cria um novo produto
-
 *************************************************** */
 var produto = new Produto();
